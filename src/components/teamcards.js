@@ -1,3 +1,4 @@
+//The premier league cards with matchday info
 import React from "react"
 import {betterTeams} from "../utils"
 import "./teamcards.css"

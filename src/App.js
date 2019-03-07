@@ -8,16 +8,17 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state={
-      team: "",
-      teamData: {},
+      team: "", //gets the value from the team badge clicked
+      teamData: {}, //holds all the matchdays from all the teams after api data manipulation
       fixturesLoaded: false}
     this.handleChange = this.handleChange.bind(this);}
 
   handleChange(event) {
     this.setState({
-      team: event.target.alt
+      team: event.target.alt //updates the this.state.team when the team image is clicked
     });}
   
+    // using the componentdidmount to call the api only once
   componentDidMount() {
     Tables.load(teams)
       .then((result) => {if (result["Liverpool FC"]){

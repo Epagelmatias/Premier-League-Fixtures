@@ -1,3 +1,5 @@
+/*When the team name in the App state updates (via images component)
+the corresponding team's matchday cards will be rendered */
 import React from "react"
 import TeamCards from "./teamcards"
 import "./cardlist.css"

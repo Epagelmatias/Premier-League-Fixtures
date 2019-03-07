@@ -8,6 +8,8 @@ let Tables= {
   .then(function (response) {
     return response.json();})
   .then(function (myJson) {
+  //returns an object containing an array for each team
+  //Each array contains the matchday info of the team
     schedules=myJson;
     teams.map((team)=>teamMatches[team]=[]);
     schedules.matches.map(match => {
@@ -18,6 +20,7 @@ let Tables= {
     // console.log(JSON.stringify(myJson));
   .catch(error => console.error('Error:', error));}}
 
+  //The team names as provided by the api
 const teams = ["Tottenham Hotspur FC", "Arsenal FC", "Wolverhampton Wanderers FC",
   "Cardiff City FC", "Manchester United FC", "Southampton FC",
   "Burnley FC", "Crystal Palace FC", "Brighton & Hove Albion FC",
@@ -26,6 +29,7 @@ const teams = ["Tottenham Hotspur FC", "Arsenal FC", "Wolverhampton Wanderers FC
   "Leicester City FC", "Fulham FC", "Chelsea FC", "Everton FC",
   "Liverpool FC",]
 
+  //Pairs the api team names with more commonly used names
 const betterTeams = {"Tottenham Hotspur FC": "Tottenham", "Arsenal FC": "Arsenal", "Wolverhampton Wanderers FC": "Wolves",
 "Cardiff City FC": "Cardiff", "Manchester United FC": "Manchester United", "Southampton FC": "Southampton",
 "Burnley FC": "Burnley", "Crystal Palace FC": "Crystal Palace", "Brighton & Hove Albion FC": "Brighton",
