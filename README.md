@@ -1,3 +1,5 @@
+The site can be found here https://hungry-einstein-a5a331.netlify.com/
+
 This site fetches Premier League info from an api. Then it manipulates the data and displays the Teams fixtures in css cards.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
