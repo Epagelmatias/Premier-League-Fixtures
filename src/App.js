@@ -1,23 +1,8 @@
 import React, { Component } from 'react';
-import logo from './football.png';
 import './App.css';
-import Rbuttons from "./components/rbuttons"
-import Tables from "./apitables"
+import {Tables, teams} from "./utils"
 import Teamfixtures from "./components/teamfixtures"
-
-
-const teams = [
-  "Tottenham Hotspur FC", "Arsenal FC", "Wolverhampton Wanderers FC",
-  "Cardiff City FC", "Manchester United FC", "Southampton FC",
-  "Burnley FC", "Crystal Palace FC", "Brighton & Hove Albion FC",
-  "Huddersfield Town AFC", "AFC Bournemouth", "Manchester City FC",
-  "Newcastle United FC", "West Ham United FC", "Watford FC",
-  "Leicester City FC", "Fulham FC", "Chelsea FC", "Everton FC",
-  "Liverpool FC",
-]
-//let tables; 
-//let tablesLoaded=false;
-//Tables.load(teams).then((res)=>{tables=res; tablesLoaded=true})
+import Images from "./components/images";
 
 class App extends Component {
   constructor(props){
@@ -25,50 +10,35 @@ class App extends Component {
     this.state={
       team: "",
       teamData: {},
-      fixturesLoaded: false
-    }
-    this.handleChange = this.handleChange.bind(this);
-  }
+      fixturesLoaded: false}
+    this.handleChange = this.handleChange.bind(this);}
 
   handleChange(event) {
     this.setState({
-      team: event.target.value
-    });
-  }
+      team: event.target.alt
+    });}
   
   componentDidMount() {
     Tables.load(teams)
-      .then(
-        (result) => {
+      .then((result) => {if (result["Liverpool FC"]){
           this.setState({
             fixturesLoaded: true,
-            teamData: result
-          });
-        },
-        (error) => {
+            teamData: result})};},
+          (error) => {
           this.setState({
-            fixturesLoaded: true,
-            error
-          });
-        }
-      )
-  }
+            fixturesLoaded: false});})}
 
-
-  render() {
-    
+  render() { 
     console.log("render")
     return (
       <div className="App">
-        <center><h1>Select a team to view scheduled matches in Premier League</h1></center>
-        <div><Rbuttons teams={teams} onChange={this.handleChange}/></div>
+        <center><h1 style={{color: "white"}}>Select a team to view scheduled matches in Premier League</h1></center>
+        <Images teams={teams} onClick={this.handleChange}/>
         <div>{this.state.fixturesLoaded ? 
         <Teamfixtures selection={this.state.team} teamData={this.state.teamData}/>            
-                      :"Fetching..."}
+                      :<center><h2 style={{color: "white"}}>Fetching...</h2></center>}
         </div>        
       </div>
-    );
-  }
-}
-//this.state.teamData[this.state.team][0].id
+    );}}
+
 export default App;

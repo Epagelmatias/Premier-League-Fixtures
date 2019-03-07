@@ -1,0 +1,24 @@
+.zoom {
+  padding: 5px;
+  transition: transform .2s; /* Animation */
+  width: 80px;
+  height: 80px;
+  margin: 0 auto;
+
+}
+
+
+
+
+.images{
+width: 90%;
+margin: 0 auto;
+text-align: center;
+}
+
+.zoom:hover {
+  transform: scale(2.2); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+
+
