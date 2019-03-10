@@ -1,4 +1,4 @@
-The site can be found here fixtures.netlify.com
+The site can be found here https://fixtures.netlify.com/
 
 This site fetches Premier League info from an api. Then it manipulates the data and displays the Teams fixtures in css cards.
 
