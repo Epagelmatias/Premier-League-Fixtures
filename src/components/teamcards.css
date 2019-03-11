@@ -5,13 +5,13 @@
   max-height: 260px;
   margin: auto;
   text-align: center;
-  background: red;
+  background: cyan;
 margin-bottom: 70px;
 	
 }
 
 .title {
-  color: silver;
+  color: purple;
   font-size: 18px;
   margin-top: 5px;
   margin-bottom: 0px;
@@ -19,11 +19,11 @@ margin-bottom: 70px;
 
 
 .time{
-	color: silver; 
+	color: purple; 
 	font-size: 18px; 
 	margin-bottom: 0px; 
 	margin-top: 14;
-background: red;
+
 }
 .teams{
 margin: 10px 4px;
