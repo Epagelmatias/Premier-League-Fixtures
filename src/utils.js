@@ -1,3 +1,21 @@
+  //The team names as provided by the api
+  const teams = ["Tottenham Hotspur FC", "Arsenal FC", "Wolverhampton Wanderers FC",
+  "Aston Villa FC", "Manchester United FC", "Southampton FC",
+  "Burnley FC", "Crystal Palace FC", "Brighton & Hove Albion FC",
+  "Sheffield United FC", "AFC Bournemouth", "Manchester City FC",
+  "Newcastle United FC", "West Ham United FC", "Watford FC",
+  "Leicester City FC", "Norwich City FC", "Chelsea FC", "Everton FC",
+  "Liverpool FC",]
+
+  //Pairs the api team names with more commonly used names
+const betterTeams = {"Tottenham Hotspur FC": "Tottenham", "Arsenal FC": "Arsenal", "Wolverhampton Wanderers FC": "Wolves",
+"Aston Villa FC": "Aston Villa", "Manchester United FC": "Manchester United", "Southampton FC": "Southampton",
+"Burnley FC": "Burnley", "Crystal Palace FC": "Crystal Palace", "Brighton & Hove Albion FC": "Brighton",
+"Sheffield United FC": "Sheffield", "AFC Bournemouth": "Bournemouth", "Manchester City FC": "Manchester City",
+"Newcastle United FC": "Newcastle", "West Ham United FC": "Westham", "Watford FC": "Watford",
+"Leicester City FC": "Leicester", "Norwich City FC": "Norwich", "Chelsea FC": "Chelsea", "Everton FC": "Everton",
+"Liverpool FC": "Liverpool"}
+
 let schedules;
 let teamMatches={};
 
@@ -19,23 +37,5 @@ let Tables= {
     //console.log(teamMatches["Liverpool FC"])
     // console.log(JSON.stringify(myJson));
   .catch(error => console.error('Error:', error));}}
-
-  //The team names as provided by the api
-const teams = ["Tottenham Hotspur FC", "Arsenal FC", "Wolverhampton Wanderers FC",
-  "Cardiff City FC", "Manchester United FC", "Southampton FC",
-  "Burnley FC", "Crystal Palace FC", "Brighton & Hove Albion FC",
-  "Huddersfield Town AFC", "AFC Bournemouth", "Manchester City FC",
-  "Newcastle United FC", "West Ham United FC", "Watford FC",
-  "Leicester City FC", "Fulham FC", "Chelsea FC", "Everton FC",
-  "Liverpool FC",]
-
-  //Pairs the api team names with more commonly used names
-const betterTeams = {"Tottenham Hotspur FC": "Tottenham", "Arsenal FC": "Arsenal", "Wolverhampton Wanderers FC": "Wolves",
-"Cardiff City FC": "Cardiff", "Manchester United FC": "Manchester United", "Southampton FC": "Southampton",
-"Burnley FC": "Burnley", "Crystal Palace FC": "Crystal Palace", "Brighton & Hove Albion FC": "Brighton",
-"Huddersfield Town AFC": "Huddersfield", "AFC Bournemouth": "Bournemouth", "Manchester City FC": "Manchester City",
-"Newcastle United FC": "Newcastle", "West Ham United FC": "Westham", "Watford FC": "Watford",
-"Leicester City FC": "Leicester", "Fulham FC": "Fulham", "Chelsea FC": "Chelsea", "Everton FC": "Everton",
-"Liverpool FC": "Liverpool"}
 
 export {Tables, betterTeams, teams}
